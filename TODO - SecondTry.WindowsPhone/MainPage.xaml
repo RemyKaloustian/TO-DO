@@ -49,7 +49,7 @@
             <CommandBar.PrimaryCommands>
                 <AppBarButton Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Edit"/>
                 <AppBarButton Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Setting"/>
-                <AppBarButton Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="ContactPresence"/>
+                <AppBarButton x:Name="AboutButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="ContactPresence" Click="AboutButton_Click"/>
             </CommandBar.PrimaryCommands>
         </CommandBar>
     </Page.BottomAppBar>

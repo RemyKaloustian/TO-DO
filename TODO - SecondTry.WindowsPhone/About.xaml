@@ -23,6 +23,28 @@
 
             <StackPanel x:Name="TaskPanel" Orientation="Vertical"
                             VerticalAlignment="Stretch"/>
+            <TextBlock TextAlignment="Left" 
+                       Margin="10,20,10,0"
+                       TextWrapping="Wrap"
+                       FontSize="20">
+                TO DO is an application that allows you to pin tasks. Its main purpose is to allow you to note things if you can't write on a paper or just if you prefer pinning it on your phone.
+                <LineBreak></LineBreak>
+                <LineBreak></LineBreak>
+                TO DO is very simple to use, just click the pen down below, and create a new note.
+                <LineBreak></LineBreak>
+            </TextBlock>
+
+            <TextBlock TextAlignment="Center" 
+                       Margin="10,10,10,0"
+                       TextWrapping="Wrap"
+                       FontSize="20">
+               This app was developped by
+                <LineBreak></LineBreak>
+                Rémy Kaloustian. <LineBreak></LineBreak>      
+            </TextBlock>
+
+            <Button x:Name="RemyButton" HorizontalAlignment="Center" BorderBrush="{x:Null}" FontSize="22"
+                    Foreground="{StaticResource PhoneAccentBrush}" Click="RemyButton_Click">remykaloustian.alwaysdata.net</Button>
 
         </StackPanel>
 

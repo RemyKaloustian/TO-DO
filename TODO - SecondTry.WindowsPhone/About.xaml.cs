@@ -15,6 +15,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Web.Http;
+using Microsoft;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -107,5 +109,16 @@ namespace TODO___SecondTry
         }
 
         #endregion
+
+        private async void RemyButton_Click(object sender, RoutedEventArgs e)
+        {
+            //WebBrowserTask wbtask = new WebBrowserTask();
+            //wbtask.Url = "http://google.com";
+            //wbtask.Show();
+            //base.OnNavigatedTo(e);
+
+            //await Launcher.LaunchUriAsync(new Uri("http://www.abundantcode.com"));
+            System.Diagnostics.Start("http://google.com");
+        }
     }
 }

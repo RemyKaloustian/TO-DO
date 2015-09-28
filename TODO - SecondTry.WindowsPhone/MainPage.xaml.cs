@@ -90,5 +90,10 @@ namespace TODO___SecondTry
        {
            System.Diagnostics.Debug.WriteLine("Panel cliked");
        }
+
+       private void AboutButton_Click(object sender, RoutedEventArgs e)
+       {
+           Frame.Navigate(typeof(About));
+       }
     }
 }
