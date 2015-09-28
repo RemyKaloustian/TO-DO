@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="TODO___SecondTry.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TODO___SecondTry"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer>
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
+            <StackPanel Background="{StaticResource PhoneAccentBrush}" >
+                <TextBlock  TextAlignment="Center" 
+						Style="{StaticResource TitleTextBlockStyle}"                Foreground="White" 
+						FontSize="50" Height="Auto"> 
+						<Run Text="About"/>
+                </TextBlock>
+               
+            </StackPanel>
+
+
+            <StackPanel x:Name="TaskPanel" Orientation="Vertical"
+                            VerticalAlignment="Stretch"/>
+
+        </StackPanel>
+
+
+
+    </ScrollViewer>
+
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Edit"/>
+                <AppBarButton Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Setting"/>
+                <AppBarButton Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="ContactPresence"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>PC-KALOUSTIAN</Machine>
+    <WindowsUser>Rémy Kaloustian</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>fbdfb6f7-9ad1-4f9f-93ae-6f4f081b4020</PackageIdentityName>
+    <IntermediateOutputPath>D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.Windows\obj\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>D49BF7A46F7118D33FF9C4631BE4159DBC9941877FA28ABEB45332814E217370</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>fbdfb6f7-9ad1-4f9f-93ae-6f4f081b4020_1.0.0.0_neutral__dk36p14nqt23e</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>fbdfb6f7-9ad1-4f9f-93ae-6f4f081b4020_dk36p14nqt23e!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>fbdfb6f7-9ad1-4f9f-93ae-6f4f081b4020</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Rémy Kaloustian</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.Windows\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-09-28T07:26:05.308</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.Windows\bin\Debug\TODO - SecondTry.Windows.exe">
+      <PackagePath>TODO - SecondTry.Windows.exe</PackagePath>
+      <Modified>2015-09-28T07:31:09.652</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.Windows\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-03-14T08:55:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.Windows\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-03-14T08:55:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.Windows\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-03-14T08:55:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.Windows\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-03-14T08:55:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.Windows\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2015-09-27T14:27:38.349</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.Windows\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+      <Modified>2015-09-28T07:31:09.495</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.Windows\bin\Debug\TODO - SecondTry.Windows.xr.xml">
+      <PackagePath>TODO - SecondTry.Windows.xr.xml</PackagePath>
+      <Modified>2015-09-28T07:31:09.481</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.Windows\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-09-28T07:26:05.122</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

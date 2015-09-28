@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>PC-KALOUSTIAN</Machine>
+    <WindowsUser>Rémy Kaloustian</WindowsUser>
+    <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>554eb424-57a6-43b8-8f40-8469dbe63864</PackageIdentityName>
+    <IntermediateOutputPath>D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Debug\TODO - SecondTry.WindowsPhone.exe">
+      <PackagePath>TODO - SecondTry.WindowsPhone.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\Assets\Logo.scale-240.png">
+      <PackagePath>Assets\Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\Assets\SmallLogo.scale-240.png">
+      <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\Assets\SplashScreen.scale-240.png">
+      <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\Assets\Square71x71Logo.scale-240.png">
+      <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\Assets\StoreLogo.scale-240.png">
+      <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\Assets\WideLogo.scale-240.png">
+      <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Debug\About.xbf">
+      <PackagePath>About.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Debug\TODO - SecondTry.WindowsPhone.xr.xml">
+      <PackagePath>TODO - SecondTry.WindowsPhone.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
