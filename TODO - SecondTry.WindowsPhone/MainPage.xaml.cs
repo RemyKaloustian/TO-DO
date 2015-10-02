@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Core;
+//using Windows.Forms;
+
 
 
 
@@ -31,6 +33,14 @@ namespace TODO___SecondTry
             this.InitializeComponent();
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
+
+            AddButton.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
+            AddButton.BorderBrush = new SolidColorBrush(Windows.UI.Colors.White);
+
+            foreach (StackPanel panel in FindVisualChildren<StackPanel>(this))
+            {
+                panel.Background = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+            }
         }
 
         /// <summary>
@@ -54,36 +64,24 @@ namespace TODO___SecondTry
 
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e)
+        public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
         {
-            //AVEC DES BOUTONS
-            //Button but = new Button();
-            //but.Content = "Task";
-            ////but.Background = (SolidColorBrush)Application.Current.Resources["PhoneAccentColor"];
-            //but.Background = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
-            //but.Width = 100;
-            //but.BorderBrush = null;
+            if (depObj != null)
+            {
+                for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
+                {
+                    DependencyObject child = VisualTreeHelper.GetChild(depObj, i);
+                    if (child != null && child is T)
+                    {
+                        yield return (T)child;
+                    }
 
-            ////but.Foreground = Brushes.Blue;
-
-            //TaskPanel.Children.Add(but);
-
-            //AVEC DES PANELS
-
-            TextBlock text = new TextBlock();
-            text.Text = "TAsk to do mothafocka de la muerte";
-            text.FontSize = 20;
-            text.Margin = new Thickness(10.0,0.0,0.0,0.0);
-            text.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
-
-            StackPanel panel = new StackPanel();
-            panel.Background = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
-            panel.Height = Responsive.GetScreenHeight() / 8;
-            panel.Children.Add(text);
-            panel.Margin = new Thickness(0.0, 10.0, 0.0, 0.0);
-            panel.Tapped += Task_Clicked;
-
-            TaskPanel.Children.Add(panel);
+                    foreach (T childOfChild in FindVisualChildren<T>(child))
+                    {
+                        yield return childOfChild;
+                    }
+                }
+            }
         }
 
        private void Task_Clicked(object sender, RoutedEventArgs e)
@@ -95,5 +93,132 @@ namespace TODO___SecondTry
        {
            Frame.Navigate(typeof(About));
        }
-    }
-}
+
+       private void NewTaskTextBox_KeyDown(object sender, KeyRoutedEventArgs e)
+       {
+           if (e.Key == Windows.System.VirtualKey.Enter) //If Enter pressed
+           {
+               //Create the textblock with the task
+               TextBlock text = new TextBlock();
+               text.Text = NewTaskTextBox.Text;
+               text.FontSize = 20;
+               text.Margin = new Thickness(10.0, 0.0, 0.0, 0.0);
+               text.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
+
+               //Creates the stackpanel containing the textbox
+               StackPanel panel = new StackPanel();
+               panel.Background = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+               panel.Height = Responsive.GetScreenHeight() / 6;
+               panel.Children.Add(text);
+               panel.Margin = new Thickness(0.0, 10.0, 0.0, 0.0);
+               panel.Tapped += Task_Clicked;
+               NewTaskTextBox.Text = "";
+               NewTaskTextBox.Visibility = Visibility.Collapsed;
+
+               //Adding the textbox to the stackpanel
+               TaskPanel.Children.Add(panel);
+
+
+               //Changing the colors of the button +
+               ChangeAddButtonColors(true);
+           }
+       }//NewTaskTextBox_KeyDown()
+
+       private void AddButton_Click_1(object sender, RoutedEventArgs e)
+       {
+           //AVEC DES BOUTONS
+           //Button but = new Button();
+           //but.Content = "Task";
+           ////but.Background = (SolidColorBrush)Application.Current.Resources["PhoneAccentColor"];
+           //but.Background = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+           //but.Width = 100;
+           //but.BorderBrush = null;
+
+           ////but.Foreground = Brushes.Blue;
+
+           //TaskPanel.Children.Add(but);
+
+           //AVEC DES PANELS
+
+
+
+           NewTaskTextBox.Visibility = Visibility.Visible;
+           NewTaskTextBox.Focus(FocusState.Keyboard);
+       }
+
+      
+
+       private void AddButton_Tapped(object sender, TappedRoutedEventArgs e)
+       {
+           ChangeAddButtonColors(false);
+       }
+
+       private void NewTaskTextBox_LostFocus(object sender, RoutedEventArgs e)
+       {
+           NewTaskTextBox.Visibility = Visibility.Collapsed;
+           ChangeAddButtonColors(true);
+       }
+
+       private void ChangeAddButtonColors(bool tapped)
+       {
+           if (!tapped)
+           {
+               AddButton.Foreground = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+               AddButton.Background = new SolidColorBrush(Windows.UI.Colors.White);
+           }
+           else
+           {
+               AddButton.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
+               AddButton.Background = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+           }
+       }
+
+       #region TestedButUnusedFunctions
+
+
+       private void AddButton_KeyDown(object sender, KeyRoutedEventArgs e)
+       {
+           //AddButton.Foreground = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+           //AddButton.Background = new SolidColorBrush(Windows.UI.Colors.White);
+       }
+
+       private void AddButton_KeyUp(object sender, KeyRoutedEventArgs e)
+       {
+           //AddButton.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
+           //AddButton.Background = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+       }
+
+       private void AddButton_PointerPressed(object sender, PointerRoutedEventArgs e)
+       {
+           //AddButton.Foreground = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+           //AddButton.Background = new SolidColorBrush(Windows.UI.Colors.White);
+       }
+
+       private void AddButton_PointerEntered(object sender, PointerRoutedEventArgs e)
+       {
+           //AddButton.Foreground = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+           //AddButton.Background = new SolidColorBrush(Windows.UI.Colors.White);
+       }
+
+       //Marchent mais pas comme il faut
+       private void AddButton_GotFocus(object sender, RoutedEventArgs e)
+       {
+           //AddButton.Foreground = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+           //AddButton.Background = new SolidColorBrush(Windows.UI.Colors.White);
+       }
+
+       private void AddButton_LostFocus(object sender, RoutedEventArgs e)
+       {
+           //AddButton.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
+           //AddButton.Background = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+       }
+
+       private void AddButton_Drop(object sender, DragEventArgs e)
+       {
+
+       }
+
+       #endregion
+
+    }//class MainPage
+}//ns

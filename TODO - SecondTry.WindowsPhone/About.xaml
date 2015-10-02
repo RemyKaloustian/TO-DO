@@ -44,7 +44,7 @@
             </TextBlock>
 
             <Button x:Name="RemyButton" HorizontalAlignment="Center" BorderBrush="{x:Null}" FontSize="22"
-                    Foreground="{StaticResource PhoneAccentBrush}" Click="RemyButton_Click">remykaloustian.alwaysdata.net</Button>
+                    Foreground="{StaticResource PhoneAccentBrush}" Click="RemyButton_Click">remy.kaloustian.alwaysdata.net</Button>
 
         </StackPanel>
 
@@ -58,7 +58,7 @@
             <CommandBar.PrimaryCommands>
                 <AppBarButton Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Edit"/>
                 <AppBarButton Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Setting"/>
-                <AppBarButton Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="ContactPresence"/>
+                <AppBarButton Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="ContactPresence"/>               
             </CommandBar.PrimaryCommands>
         </CommandBar>
     </Page.BottomAppBar>

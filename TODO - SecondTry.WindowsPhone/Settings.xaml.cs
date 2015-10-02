@@ -15,8 +15,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Windows.Web.Http;
-
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -25,12 +23,12 @@ namespace TODO___SecondTry
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class About : Page
+    public sealed partial class Settings : Page
     {
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
-        public About()
+        public Settings()
         {
             this.InitializeComponent();
 
@@ -109,14 +107,5 @@ namespace TODO___SecondTry
         }
 
         #endregion
-
-        private async void RemyButton_Click(object sender, RoutedEventArgs e)
-        {   
-            string uriToLaunch = @"http://remy.kaloustian.alwaysdata.net";
-            var uri = new Uri(uriToLaunch);
-            var options = new Windows.System.LauncherOptions();
-            options.TreatAsUntrusted = true;           
-            var success = await Windows.System.Launcher.LaunchUriAsync(uri, options);            
-        }
     }
 }

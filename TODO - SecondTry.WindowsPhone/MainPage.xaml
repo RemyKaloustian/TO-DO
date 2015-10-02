@@ -8,23 +8,27 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    
-<ScrollViewer>
-        
-            <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
-                <StackPanel Background="{StaticResource PhoneAccentBrush}" >
-                    <TextBlock  TextAlignment="Center" 
+
+    <ScrollViewer Name="Scroller">
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
+            <StackPanel Background="{StaticResource PhoneAccentBrush}" >
+                <TextBlock  TextAlignment="Center" 
 						Style="{StaticResource TitleTextBlockStyle}"                Foreground="White" 
 						FontSize="50" Height="Auto"> 
 						<Run Text="To DO"/>
-                    </TextBlock>
-                    <Button x:Name="AddButton" Click="AddButton_Click" Content="ADD"/>
-                </StackPanel>
-            
+                </TextBlock>
+                <Button x:Name="AddButton" FontSize="50" HorizontalAlignment="Stretch" Click="AddButton_Click_1" BorderBrush="White" BorderThickness="2" KeyDown="AddButton_KeyDown" KeyUp="AddButton_KeyUp" PointerPressed="AddButton_PointerPressed" GotFocus="AddButton_GotFocus" LostFocus="AddButton_LostFocus" Margin="2,0,0,0" PointerEntered="AddButton_PointerEntered" Drop="AddButton_Drop" Tapped="AddButton_Tapped"
+                        >+</Button>
+            </StackPanel>
 
-                <StackPanel x:Name="TaskPanel" Orientation="Vertical"
+
+            <StackPanel x:Name="TaskPanel" Orientation="Vertical"
                             VerticalAlignment="Stretch">
-                    <StackPanel Height="88"
+
+                <TextBox x:Name="NewTaskTextBox" Visibility="Collapsed" KeyDown="NewTaskTextBox_KeyDown" LostFocus="NewTaskTextBox_LostFocus"/>
+
+                <!--<StackPanel Height="88"
 						Background="{StaticResource PhoneAccentBrush}"
                             >
                         <TextBlock FontSize="20" Margin="10,0,0,0"
@@ -33,16 +37,16 @@
                         </TextBlock>
 
 
-                    </StackPanel>
+                    </StackPanel>-->
 
-                </StackPanel> 
-            
             </StackPanel>
 
+        </StackPanel>
 
-        
-</ScrollViewer>
-   
+
+
+    </ScrollViewer>
+
 
     <Page.BottomAppBar>
         <CommandBar>
