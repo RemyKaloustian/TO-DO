@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="TODO___SecondTry.MainPage"
+    x:Class="TODO___SecondTry.Help"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:TODO___SecondTry"
@@ -8,7 +8,6 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-
     <ScrollViewer Name="Scroller">
 
         <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
@@ -16,10 +15,9 @@
                 <TextBlock  TextAlignment="Center" 
 						Style="{StaticResource TitleTextBlockStyle}"                Foreground="White" 
 						FontSize="50" Height="Auto"> 
-						<Run Text="To DO"/>
+						<Run Text="Help"/>
                 </TextBlock>
-                <Button x:Name="AddButton" FontSize="50" HorizontalAlignment="Stretch" Click="AddButton_Click_1" BorderBrush="White" BorderThickness="2" KeyDown="AddButton_KeyDown" KeyUp="AddButton_KeyUp" PointerPressed="AddButton_PointerPressed" GotFocus="AddButton_GotFocus" LostFocus="AddButton_LostFocus" Margin="2,0,0,0" PointerEntered="AddButton_PointerEntered" Drop="AddButton_Drop" Tapped="AddButton_Tapped"
-                        >+</Button>
+                
             </StackPanel>
 
 
