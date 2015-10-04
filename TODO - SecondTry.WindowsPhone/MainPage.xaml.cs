@@ -14,6 +14,16 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Core;
+using System.Xml.Serialization;
+using System.Xml;
+using Windows.ApplicationModel;
+using Windows.Storage;
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 //using Windows.Forms;
 
 
@@ -35,7 +45,9 @@ namespace TODO___SecondTry
 
         public static SolidColorBrush _phoneAccent { get; set; }
 
-        public StackPanel Tasks { get; set; }
+        public List<StackPanel> _tasks { get; set; }
+
+        public List<TextBlock> _taskNames { get; set; }
 
         public MainPage()
         {
@@ -43,17 +55,33 @@ namespace TODO___SecondTry
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
 
-            _screenHeight =Responsive.GetScreenHeight() ;
+            _screenHeight = Responsive.GetScreenHeight();
             _phoneAccent = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+            _tasks = new List<StackPanel>();
+            _taskNames = new List<TextBlock>();
 
-
+            HeaderStackPanel.Background = _phoneAccent;
             AddButton.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
             AddButton.BorderBrush = new SolidColorBrush(Windows.UI.Colors.White);
 
+            //Sets the colors to the Phone Acce
+
             foreach (StackPanel panel in FindVisualChildren<StackPanel>(this))
             {
-                panel.Background = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+                panel.Background = _phoneAccent;
+                //StackPanel chil = (StackPanel)panel.Children;
             }
+
+            foreach (Button panel in FindVisualChildren<Button>(this))
+            {
+                panel.Background = _phoneAccent;
+            }
+
+            foreach (var panel in _tasks)
+            {
+                panel.Background = _phoneAccent;
+            }
+
         }
 
         /// <summary>
@@ -63,6 +91,7 @@ namespace TODO___SecondTry
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine("Navigated to");
             // TODO: Prepare page for display here.
 
             // TODO: If your application contains multiple pages, ensure that you are
@@ -70,6 +99,36 @@ namespace TODO___SecondTry
             // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
             // If you are using the NavigationHelper provided by some templates,
             // this event is handled for you.
+
+            System.Diagnostics.Debug.WriteLine("Old phone accent : " + _phoneAccent.ToString());
+            _phoneAccent = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+            System.Diagnostics.Debug.WriteLine("New phone accent : " + _phoneAccent.ToString());
+            foreach (var panel in _tasks)
+            {
+                panel.Background = _phoneAccent;
+                System.Diagnostics.Debug.WriteLine("In foreach tasks");
+
+            }
+
+            HeaderStackPanel.Background = _phoneAccent;
+            AddButton.Background = _phoneAccent;
+            _taskNames = new List<TextBlock>();
+
+            LoadData();
+
+            //foreach (Control panel in FindVisualChildren<Control>(this))
+            //{
+            //    panel.Background = _phoneAccent;
+            //    //StackPanel chil = (StackPanel)panel.Children;
+            //    System.Diagnostics.Debug.WriteLine("In foreach stackpanels");
+            //}
+
+            //foreach (Button panel in FindVisualChildren<Button>(this))
+            //{
+            //    panel.Background = _phoneAccent;
+
+            //    System.Diagnostics.Debug.WriteLine("In foreach button");
+            //}
         }
 
         private void MainButtonClick(object sender, RoutedEventArgs e)
@@ -97,16 +156,6 @@ namespace TODO___SecondTry
             }
         }
 
-        private void Task_Clicked(object sender, RoutedEventArgs e)
-        {
-            System.Diagnostics.Debug.WriteLine("Panel cliked");
-        }
-
-        private void AboutButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(About));
-        }
-
         private void NewTaskTextBox_KeyDown(object sender, KeyRoutedEventArgs e)
         {
             if (e.Key == Windows.System.VirtualKey.Enter && sender.Equals(NewTaskTextBox)) //If Enter pressed
@@ -120,81 +169,106 @@ namespace TODO___SecondTry
 
                 //Creates the stackpanel containing the textbox
                 StackPanel panel = new StackPanel();
-                panel.Background = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+                panel.Background = _phoneAccent;
                 panel.Height = _screenHeight / 6;
 
                 panel.Orientation = Orientation.Vertical;
                 panel.Margin = new Thickness(0.0, 10.0, 0.0, 0.0);
-                panel.Tapped += Task_Clicked;
+
                 NewTaskTextBox.Text = "";
                 NewTaskTextBox.Visibility = Visibility.Collapsed;
 
-                text.Height = panel.Height / 2; 
-                
-                ////Creates the textbox to change the task name
-                //TextBox changeNameTextBox = new TextBox();
-                //changeNameTextBox.Visibility = Visibility.Collapsed;
+                text.Height = panel.Height / 2;
+
+
 
                 panel.Children.Add(text);
-                //panel.Children.Add(changeNameTextBox);
+
 
                 //Handles new events
                 panel.Holding += DeleteTask;
                 panel.Tapped += ModifyTask;
 
 
-
-             
-
-
-                //Creates two stackpanels
-                StackPanel modifyButtonPanel = new StackPanel();
-                modifyButtonPanel.Width = Responsive.GetScreenWidth() / 2;
-                modifyButtonPanel.Background = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
-                modifyButtonPanel.HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Left;
-
-                StackPanel deleteButtonPanel = new StackPanel();
-                deleteButtonPanel.Width = Responsive.GetScreenWidth() / 2;
-                deleteButtonPanel.Background = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
-                deleteButtonPanel.HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Left;
-
-                //Creates a main stackpanel
-                StackPanel mainPanel = new StackPanel();
-                mainPanel.Orientation = Orientation.Horizontal;
-
-                //Add modifyButton button
-                Button modifyButton = new Button();
-                modifyButton.Content = "modifyButton";
-                modifyButton.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
-                modifyButton.Width = Responsive.GetScreenWidth() / 2;
-                modifyButton.BorderBrush = null;
-
-                //Add deleteButton button
-                Button deleteButton = new Button();
-                deleteButton.Content = "deleteButton";
-                deleteButton.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
-                deleteButton.HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Right;
-                deleteButton.Width = Responsive.GetScreenWidth() / 2;
-                deleteButton.BorderBrush = (null);
-
-                //Adds the buttons to the panels, and thes panels to the mainPanel              
-                modifyButtonPanel.Children.Add(modifyButton);
-                deleteButtonPanel.Children.Add(deleteButton);
-                mainPanel.Children.Add(modifyButtonPanel);
-                mainPanel.Children.Add(deleteButtonPanel);
-
-                //Adds everything to the panel of the task
-                //panel.Children.Add(mainPanel);
+                //Adds the new task to the List of tasks
+                if (_taskNames == null)
+                    _taskNames = new List<TextBlock>();
+                _taskNames.Add(text);
 
                 //Adds the panel to the Big TaskPanel
                 TaskPanel.Children.Add(panel);
 
+                SaveTasks();
+
                 //Changes the colors of the button +
-                ChangeAddButtonColors(true);
+                AddButton.Background = _phoneAccent;
+                AddButton.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
             }
         }//NewTaskTextBox_KeyDown()
 
-      
+
+        private void SaveTasks()
+        {
+            //if(_taskNames != null)
+            //    ApplicationData.Current.LocalSettings.Values["_taskNames"] = _taskNames.ToArray<TextBlock>();
+
+            XmlSerializer serializer = new XmlSerializer(typeof(List<TextBlock>));
+            StringBuilder stringBuilder = new StringBuilder();
+            XmlWriterSettings settings = new XmlWriterSettings()
+            {
+                Indent = true,
+                OmitXmlDeclaration = true,
+            };
+
+
+            using (XmlWriter xmlWriter = XmlWriter.Create(stringBuilder, settings))
+            {
+                serializer.Serialize(xmlWriter, _taskNames);
+            } 
+        }
+
+        private void LoadData()
+        {
+            if ((List<TextBlock>)ApplicationData.Current.LocalSettings.Values["_taskNames"] != null)
+                _taskNames = ((List<TextBlock>)ApplicationData.Current.LocalSettings.Values["_taskNames"]).ToList();
+
+            if (_taskNames != null)
+            {
+                foreach (var taskname in _taskNames)
+                {
+                    //Creates the textblock with the task
+                    TextBlock text = new TextBlock();
+                    text.Text = (taskname as TextBlock).Text;
+                    text.FontSize = 20;
+                    text.Margin = new Thickness(10.0, 0.0, 0.0, 0.0);
+                    text.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
+
+                    //Creates the stackpanel containing the textbox
+                    StackPanel panel = new StackPanel();
+                    panel.Background = _phoneAccent;
+                    panel.Height = _screenHeight / 6;
+
+                    panel.Orientation = Orientation.Vertical;
+                    panel.Margin = new Thickness(0.0, 10.0, 0.0, 0.0);
+
+                    NewTaskTextBox.Text = "";
+                    NewTaskTextBox.Visibility = Visibility.Collapsed;
+
+                    text.Height = panel.Height / 2;
+
+
+
+                    panel.Children.Add(text);
+
+
+                    //Handles new events
+                    panel.Holding += DeleteTask;
+                    panel.Tapped += ModifyTask;
+
+                    TaskPanel.Children.Add(panel);
+                }
+            }
+        }
 
         private void DeleteTask(object sender, RoutedEventArgs e)
         {
@@ -203,12 +277,6 @@ namespace TODO___SecondTry
 
         private void ModifyTask(object sender, RoutedEventArgs e)
         {
-            //TextBox changeNameTextBox = new TextBox();
-            //changeNameTextBox.Visibility = Visibility;
-            //((StackPanel)sender).Children.Add(changeNameTextBox);
-            //changeNameTextBox.Focus(FocusState.Keyboard);
-            System.Diagnostics.Debug.WriteLine("Sender = " + sender.ToString());
-
             _currentTask = ((StackPanel)sender).Children.OfType<TextBlock>().FirstOrDefault();
 
             ChangeNameTextBox.Visibility = Visibility.Visible;
@@ -221,20 +289,17 @@ namespace TODO___SecondTry
 
         void ChangeNameTextBox_KeyDown(object sender, KeyRoutedEventArgs e)
         {
-            if((e.Key == Windows.System.VirtualKey.Enter) && (!ChangeNameTextBox.Text.Equals("")))
+            if ((e.Key == Windows.System.VirtualKey.Enter) && (!ChangeNameTextBox.Text.Equals("")))
             {
                 System.Diagnostics.Debug.WriteLine(ChangeNameTextBox.Text);
                 _currentTask.Text = ChangeNameTextBox.Text;
                 ChangeNameTextBox.Text = "";
                 ChangeNameTextBox.Visibility = Visibility.Collapsed;
             }
-            
+
         }
 
-      
-
-
-        private void   DestroyChangeNameTextBox(object sender, RoutedEventArgs e)
+        private void DestroyChangeNameTextBox(object sender, RoutedEventArgs e)
         {
             ChangeNameTextBox.Visibility = Visibility.Collapsed;
         }
@@ -243,79 +308,209 @@ namespace TODO___SecondTry
         {
             NewTaskTextBox.Visibility = Visibility.Visible;
             NewTaskTextBox.Focus(FocusState.Keyboard);
+            AddButton.Background = new SolidColorBrush(Windows.UI.Colors.White);
+            AddButton.Foreground = _phoneAccent;
         }
 
         private void AddButton_Tapped(object sender, TappedRoutedEventArgs e) //Creates a hover effect
         {
-            ChangeAddButtonColors(false);
+            //ChangeAddButtonColors(false);
         }
 
         private void NewTaskTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             NewTaskTextBox.Visibility = Visibility.Collapsed;
-            ChangeAddButtonColors(true);
+            AddButton.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
+            AddButton.Background = _phoneAccent;
         }
 
         private void ChangeAddButtonColors(bool tapped) //Changes the color of the Add button
         {
             if (!tapped)
             {
-                AddButton.Foreground = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+                AddButton.Foreground = _phoneAccent;
                 AddButton.Background = new SolidColorBrush(Windows.UI.Colors.White);
             }
             else
             {
                 AddButton.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
-                AddButton.Background = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+                AddButton.Background = _phoneAccent;
             }
         }
 
-        #region TestedButUnusedFunctions
-
-
-        private void AddButton_KeyDown(object sender, KeyRoutedEventArgs e)
+        private void HelpButton_Click(object sender, RoutedEventArgs e)
         {
-            //AddButton.Foreground = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
-            //AddButton.Background = new SolidColorBrush(Windows.UI.Colors.White);
+            Frame.Navigate(typeof(Help));
         }
 
-        private void AddButton_KeyUp(object sender, KeyRoutedEventArgs e)
+        private void SettingsBarButton_Click(object sender, RoutedEventArgs e)
         {
-            //AddButton.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
-            //AddButton.Background = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+            Frame.Navigate(typeof(Settings));
         }
 
-        private void AddButton_PointerPressed(object sender, PointerRoutedEventArgs e)
+        private void AboutButton_Click(object sender, RoutedEventArgs e)
         {
-            //AddButton.Foreground = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
-            //AddButton.Background = new SolidColorBrush(Windows.UI.Colors.White);
+            Frame.Navigate(typeof(About));
         }
 
-        private void AddButton_PointerEntered(object sender, PointerRoutedEventArgs e)
+        private void Page_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
-            //AddButton.Foreground = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
-            //AddButton.Background = new SolidColorBrush(Windows.UI.Colors.White);
+            if (_phoneAccent != new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color))
+            {
+                Frame.Navigate(typeof(MainPage));
+            }
         }
 
-        //Marchent mais pas comme il faut
-        private void AddButton_GotFocus(object sender, RoutedEventArgs e)
-        {
-            //AddButton.Foreground = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
-            //AddButton.Background = new SolidColorBrush(Windows.UI.Colors.White);
-        }
 
-        private void AddButton_LostFocus(object sender, RoutedEventArgs e)
-        {
-            //AddButton.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
-            //AddButton.Background = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
-        }
 
-        private void AddButton_Drop(object sender, DragEventArgs e)
-        {
+        //private void Page_Loaded(object sender, RoutedEventArgs e)
+        //{
+        //    System.Diagnostics.Debug.WriteLine("Loaded");
+        //    // TODO: Prepare page for display here.
 
-        }
+        //    // TODO: If your application contains multiple pages, ensure that you are
+        //    // handling the hardware Back button by registering for the
+        //    // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
+        //    // If you are using the NavigationHelper provided by some templates,
+        //    // this event is handled for you.
 
-        #endregion
+        //    System.Diagnostics.Debug.WriteLine("Old phone accent : " + _phoneAccent.ToString());
+        //    _phoneAccent = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+        //    System.Diagnostics.Debug.WriteLine("New phone accent : " + _phoneAccent.ToString());
+        //    foreach (var panel in _tasks)
+        //    {
+        //        panel.Background = _phoneAccent;
+        //        System.Diagnostics.Debug.WriteLine("In foreach tasks");
+
+        //    }
+
+        //    foreach (Control panel in FindVisualChildren<Control>(this))
+        //    {
+        //        panel.Background = _phoneAccent;
+        //        //StackPanel chil = (StackPanel)panel.Children;
+        //        System.Diagnostics.Debug.WriteLine("In foreach stackpanels");
+        //    }
+
+        //    foreach (Button panel in FindVisualChildren<Button>(this))
+        //    {
+        //        panel.Background = _phoneAccent;
+
+        //        System.Diagnostics.Debug.WriteLine("In foreach button");
+        //    }
+
+        //}
+
+        //private void Page_DataContextChanged(FrameworkElement sender, DataContextChangedEventArgs args)
+        //{
+        //    System.Diagnostics.Debug.WriteLine("dataContextChanged");
+        //    // TODO: Prepare page for display here.
+
+        //    // TODO: If your application contains multiple pages, ensure that you are
+        //    // handling the hardware Back button by registering for the
+        //    // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
+        //    // If you are using the NavigationHelper provided by some templates,
+        //    // this event is handled for you.
+
+        //    System.Diagnostics.Debug.WriteLine("Old phone accent : " + _phoneAccent.ToString());
+        //    _phoneAccent = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+        //    System.Diagnostics.Debug.WriteLine("New phone accent : " + _phoneAccent.ToString());
+        //    foreach (var panel in _tasks)
+        //    {
+        //        panel.Background = _phoneAccent;
+        //        System.Diagnostics.Debug.WriteLine("In foreach tasks");
+
+        //    }
+
+        //    foreach (Control panel in FindVisualChildren<Control>(this))
+        //    {
+        //        panel.Background = _phoneAccent;
+        //        //StackPanel chil = (StackPanel)panel.Children;
+        //        System.Diagnostics.Debug.WriteLine("In foreach stackpanels");
+        //    }
+
+        //    foreach (Button panel in FindVisualChildren<Button>(this))
+        //    {
+        //        panel.Background = _phoneAccent;
+
+        //        System.Diagnostics.Debug.WriteLine("In foreach button");
+        //    }
+
+        //}
+
+        //private void Page_GotFocus(object sender, RoutedEventArgs e)
+        //{
+        //    System.Diagnostics.Debug.WriteLine("GotFocus");
+        //    // TODO: Prepare page for display here.
+
+        //    // TODO: If your application contains multiple pages, ensure that you are
+        //    // handling the hardware Back button by registering for the
+        //    // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
+        //    // If you are using the NavigationHelper provided by some templates,
+        //    // this event is handled for you.
+
+        //    System.Diagnostics.Debug.WriteLine("Old phone accent : " + _phoneAccent.ToString());
+        //    _phoneAccent = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+        //    System.Diagnostics.Debug.WriteLine("New phone accent : " + _phoneAccent.ToString());
+        //    foreach (var panel in _tasks)
+        //    {
+        //        panel.Background = _phoneAccent;
+        //        System.Diagnostics.Debug.WriteLine("In foreach tasks");
+
+        //    }
+
+        //    foreach (Control panel in FindVisualChildren<Control>(this))
+        //    {
+        //        panel.Background = _phoneAccent;
+        //        //StackPanel chil = (StackPanel)panel.Children;
+        //        System.Diagnostics.Debug.WriteLine("In foreach stackpanels");
+        //    }
+
+        //    foreach (Button panel in FindVisualChildren<Button>(this))
+        //    {
+        //        panel.Background = _phoneAccent;
+
+        //        System.Diagnostics.Debug.WriteLine("In foreach button");
+        //    }
+
+        //}
+
+        //private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
+        //{
+        //    System.Diagnostics.Debug.WriteLine("sizechanged");
+        //    // TODO: Prepare page for display here.
+
+        //    // TODO: If your application contains multiple pages, ensure that you are
+        //    // handling the hardware Back button by registering for the
+        //    // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
+        //    // If you are using the NavigationHelper provided by some templates,
+        //    // this event is handled for you.
+
+        //    System.Diagnostics.Debug.WriteLine("Old phone accent : " + _phoneAccent.ToString());
+        //    _phoneAccent = new SolidColorBrush((App.Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color);
+        //    System.Diagnostics.Debug.WriteLine("New phone accent : " + _phoneAccent.ToString());
+        //    foreach (var panel in _tasks)
+        //    {
+        //        panel.Background = _phoneAccent;
+        //        System.Diagnostics.Debug.WriteLine("In foreach tasks");
+
+        //    }
+
+        //    foreach (Control panel in FindVisualChildren<Control>(this))
+        //    {
+        //        panel.Background = _phoneAccent;
+        //        //StackPanel chil = (StackPanel)panel.Children;
+        //        System.Diagnostics.Debug.WriteLine("In foreach stackpanels");
+        //    }
+
+        //    foreach (Button panel in FindVisualChildren<Button>(this))
+        //    {
+        //        panel.Background = _phoneAccent;
+
+        //        System.Diagnostics.Debug.WriteLine("In foreach button");
+        //    }
+
+        //}
+
 
     }//class MainPage
 }//ns

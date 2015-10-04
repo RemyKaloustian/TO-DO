@@ -12,7 +12,7 @@
 
         <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
             <StackPanel Background="{StaticResource PhoneAccentBrush}" >
-                <TextBlock  TextAlignment="Center" 
+                <TextBlock x:Name="TitleTextBlock"  TextAlignment="Center" 
 						Style="{StaticResource TitleTextBlockStyle}"                Foreground="White" 
 						FontSize="50" Height="Auto"> 
 						<Run Text="Help"/>
@@ -24,20 +24,20 @@
             <StackPanel x:Name="TaskPanel" Orientation="Vertical"
                             VerticalAlignment="Stretch">
 
-                <TextBox x:Name="NewTaskTextBox" Visibility="Collapsed" KeyDown="NewTaskTextBox_KeyDown" LostFocus="NewTaskTextBox_LostFocus"/>
-
-                <TextBox x:Name="ChangeNameTextBox" Visibility="Collapsed" KeyDown="NewTaskTextBox_KeyDown" LostFocus="NewTaskTextBox_LostFocus"/>
-
-                <!--<StackPanel Height="88"
-						Background="{StaticResource PhoneAccentBrush}"
-                            >
-                        <TextBlock FontSize="20" Margin="10,0,0,0"
-							Foreground="White">
-							<Run Text="Task to do motherfucker de la muerte"/>
-                        </TextBlock>
-
-
-                    </StackPanel>-->
+                <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="10,10,10,0" Foreground="{StaticResource PhoneAccentBrush}"
+                           >
+                    Click on a task to change its name.
+                    
+                    <LineBreak></LineBreak>
+                    <LineBreak></LineBreak>
+                    Hold a task to delete it.
+                    
+                    <LineBreak></LineBreak>
+                    <LineBreak></LineBreak>
+                    
+                    For any problem, make sure to contact the developer (see About below).
+                    
+                </TextBlock>
 
             </StackPanel>
 
@@ -52,9 +52,9 @@
     <Page.BottomAppBar>
         <CommandBar>
             <CommandBar.PrimaryCommands>
-                <AppBarButton Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Help"/>
-                <AppBarButton Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Setting"/>
-                <AppBarButton x:Name="AboutButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="ContactPresence" Click="AboutButton_Click"/>
+                <AppBarButton x:Name="HomeBarButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Home" Click="HomeBarButton_Click"/>
+                <AppBarButton x:Name="SettingsBarButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Setting" Click="SettingsBarButton_Click"/>
+                <AppBarButton x:Name="AboutButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="ContactPresence" Click="AboutBarButton_Click"/>
             </CommandBar.PrimaryCommands>
         </CommandBar>
     </Page.BottomAppBar>

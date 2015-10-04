@@ -35,6 +35,8 @@ namespace TODO___SecondTry
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
+
+            TitleTextBlock.Margin = new Thickness(0, 0, 0, Responsive.GetScreenHeight() / 20);
         }
 
         /// <summary>
@@ -107,5 +109,15 @@ namespace TODO___SecondTry
         }
 
         #endregion
+
+        private void HomeBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
+
+        private void AboutBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(About));
+        }
     }
 }

@@ -10,6 +10,7 @@
       <RootProperty Name="Background" />
       <RootProperty Name="Content" />
       <RootProperty Name="BottomAppBar" />
+      <RootEvent Name="PointerEntered" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
@@ -21,16 +22,19 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Children" />
       <RootProperty Name="Background" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="Margin" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="FontSize" />
+      <RootProperty Name="Foreground" />
       <RootProperty Name="Inlines" />
       <RootProperty Name="Style" />
-      <RootProperty Name="Foreground" />
       <RootProperty Name="Height" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="CharacterSpacing" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="HorizontalAlignment" />
@@ -41,14 +45,6 @@
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="Margin" />
       <RootEvent Name="Click" />
-      <RootEvent Name="KeyDown" />
-      <RootEvent Name="KeyUp" />
-      <RootEvent Name="PointerPressed" />
-      <RootEvent Name="GotFocus" />
-      <RootEvent Name="LostFocus" />
-      <RootEvent Name="PointerEntered" />
-      <RootEvent Name="Drop" />
-      <RootEvent Name="Tapped" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.NullExtension" />
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
@@ -67,12 +63,28 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding" />
     <RootType FullName="TODO___SecondTry.About" />
+    <RootType FullName="TODO___SecondTry.Help" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Visibility" />
       <RootEvent Name="KeyDown" />
       <RootEvent Name="LostFocus" />
     </RootType>
     <RootType FullName="TODO___SecondTry.MainPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Grid">
+      <RootProperty Name="ChildrenTransitions" />
+      <RootProperty Name="RowDefinitions" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="Margin" />
+      <RootEvent Name="DataContextChanged" />
+      <RootMethod Name="GetRow" />
+      <RootMethod Name="SetRow" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
+    <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition" />
+    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
+      <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="TODO___SecondTry.Opening" />
     <RootType FullName="TODO___SecondTry.Settings" />
   </Roots.RootTypes>
 </Roots>

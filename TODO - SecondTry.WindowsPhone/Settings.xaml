@@ -12,7 +12,7 @@
 
         <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
             <StackPanel Background="{StaticResource PhoneAccentBrush}" >
-                <TextBlock  TextAlignment="Center" 
+                <TextBlock x:Name="TitleTextBlock"  TextAlignment="Center" 
 						Style="{StaticResource TitleTextBlockStyle}"                Foreground="White" 
 						FontSize="50" Height="Auto"> 
 						<Run Text="Settings"/>
@@ -36,9 +36,9 @@
     <Page.BottomAppBar>
         <CommandBar>
             <CommandBar.PrimaryCommands>
-                <AppBarButton Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Edit"/>
+                <AppBarButton x:Name="HomeBarButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Home" Click="HomeBarButton_Click"/>
                 <AppBarButton Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Setting"/>
-                <AppBarButton Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="ContactPresence"/>
+                <AppBarButton x:Name="AboutBarButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="ContactPresence" Click="AboutBarButton_Click"/>
             </CommandBar.PrimaryCommands>
         </CommandBar>
     </Page.BottomAppBar>

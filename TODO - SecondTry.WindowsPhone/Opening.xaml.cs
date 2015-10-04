@@ -15,8 +15,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Windows.Web.Http;
-
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -25,20 +23,33 @@ namespace TODO___SecondTry
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class About : Page
+    public sealed partial class Opening : Page
     {
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
-        public About()
+        public Opening()
         {
+
             this.InitializeComponent();
 
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
+            this.WaitForFiveSeconds();
+            Frame.Navigate(typeof(MainPage));
+        }
 
-            TitleTextBlock.Margin = new Thickness(0, 0, 0, Responsive.GetScreenHeight() / 20);
+       
+            
+            
+            
+      
+
+        private async void WaitForFiveSeconds()
+        {
+            await System.Threading.Tasks.Task.Delay(TimeSpan.FromSeconds(2));
+            // do something after 5 seconds!
         }
 
         /// <summary>
@@ -102,6 +113,7 @@ namespace TODO___SecondTry
         /// handlers that cannot cancel the navigation request.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+           
             this.navigationHelper.OnNavigatedTo(e);
         }
 
@@ -112,23 +124,9 @@ namespace TODO___SecondTry
 
         #endregion
 
-        private async void RemyButton_Click(object sender, RoutedEventArgs e)
-        {   
-            string uriToLaunch = @"http://remy.kaloustian.alwaysdata.net";
-            var uri = new Uri(uriToLaunch);
-            var options = new Windows.System.LauncherOptions();
-            options.TreatAsUntrusted = true;           
-            var success = await Windows.System.Launcher.LaunchUriAsync(uri, options);            
-        }
-
-        private void AboutBarButton_Click(object sender, RoutedEventArgs e)
+        private void LayoutRoot_DataContextChanged(FrameworkElement sender, DataContextChangedEventArgs args)
         {
-            Frame.Navigate(typeof(MainPage));
-        }
 
-        private void SettingsBarButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Settings));
         }
     }
 }
