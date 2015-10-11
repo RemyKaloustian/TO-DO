@@ -449,8 +449,24 @@ namespace TODO___SecondTry
         {
             if ((e.Key == Windows.System.VirtualKey.Enter) && (!ChangeNameTextBox.Text.Equals("")))
             {
-                System.Diagnostics.Debug.WriteLine(ChangeNameTextBox.Text);
-                _currentTask.Text = ChangeNameTextBox.Text;
+                System.Diagnostics.Debug.WriteLine("In ChangeNameTextBox, nom avant : " + _currentTask.Text);
+
+                var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
+                for (int i = 0; i < _currentItem; ++i )
+                {
+                    System.Diagnostics.Debug.WriteLine("In ChangeNameTextBox, Dans for, iteration " + i);
+                    if (localSettings.Values["task" + i].Equals(_currentTask.Text))
+                    {
+                        System.Diagnostics.Debug.WriteLine("In ChangeNameTextBox, equal value found : " + localSettings.Values["task" + i] + " = " + _currentTask.Text);
+                        localSettings.Values["task" + i] = ChangeNameTextBox.Text;
+                        System.Diagnostics.Debug.WriteLine("In ChangeNameTextBox, after rename, saved value = " + localSettings.Values["task" + i]);
+                        break;
+                    }
+                }
+
+                
+                    _currentTask.Text = ChangeNameTextBox.Text;
                 ChangeNameTextBox.Text = "";
                 ChangeNameTextBox.Visibility = Visibility.Collapsed;
             }
