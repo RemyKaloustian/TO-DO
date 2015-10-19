@@ -13,7 +13,9 @@
 
         <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
             <StackPanel x:Name="HeaderStackPanel"  >
-                <Button x:Name="debug" Content="Button" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="debug_Click"/>
+                <Button x:Name="DebuggSaves" Content="Display Saves
+                        " HorizontalAlignment="Right" VerticalAlignment="Top" Width="169" Click="DebuggSaves_Click"/>
+                <Button x:Name="debug" Content="Nullize" HorizontalAlignment="Left" VerticalAlignment="Stretch" Click="debug_Click" Width="206"/>
                 <TextBlock  TextAlignment="Center" 
 						Style="{StaticResource TitleTextBlockStyle}"                Foreground="White" 
 						FontSize="50" Height="Auto"> 
@@ -58,7 +60,6 @@
         <CommandBar>
             <CommandBar.PrimaryCommands>
                 <AppBarButton x:Name="HelpButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Help" Click="HelpButton_Click"/>
-                <AppBarButton x:Name="SettingsBarButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Setting" Click="SettingsBarButton_Click"/>
                 <AppBarButton x:Name="AboutButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="ContactPresence" Click="AboutButton_Click"/>
             </CommandBar.PrimaryCommands>
         </CommandBar>

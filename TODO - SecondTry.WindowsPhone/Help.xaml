@@ -53,7 +53,6 @@
         <CommandBar>
             <CommandBar.PrimaryCommands>
                 <AppBarButton x:Name="HomeBarButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Home" Click="HomeBarButton_Click"/>
-                <AppBarButton x:Name="SettingsBarButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Setting" Click="SettingsBarButton_Click"/>
                 <AppBarButton x:Name="AboutButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="ContactPresence" Click="AboutBarButton_Click"/>
             </CommandBar.PrimaryCommands>
         </CommandBar>

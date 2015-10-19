@@ -59,7 +59,6 @@
         <CommandBar>
             <CommandBar.PrimaryCommands>
                 <AppBarButton x:ConnectionId='2' x:Name="AboutBarButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Home"                             />
-                <AppBarButton x:ConnectionId='3' x:Name="SettingsBarButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Setting"                                />
                 <AppBarButton Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="ContactPresence"                         />         
             </CommandBar.PrimaryCommands>
         </CommandBar>

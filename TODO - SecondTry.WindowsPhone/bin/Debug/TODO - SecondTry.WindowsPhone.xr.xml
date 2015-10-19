@@ -42,6 +42,7 @@
       <RootProperty Name="Foreground" />
       <RootProperty Name="Content" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Width" />
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="Margin" />
       <RootEvent Name="Click" />

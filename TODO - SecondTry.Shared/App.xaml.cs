@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
+
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
 namespace TODO___SecondTry
@@ -39,6 +40,8 @@ namespace TODO___SecondTry
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
+
+            
         }
 
         /// <summary>
@@ -135,7 +138,14 @@ namespace TODO___SecondTry
             // TODO: Save application state and stop any background activity
             deferral.Complete();
 
+            App.Current.Exit();
+
             
         }
+
+        //private void Application_Deactivated(object sender,  e)
+        //{
+        //    App.Current.Exit;
+        //}
     }
 }

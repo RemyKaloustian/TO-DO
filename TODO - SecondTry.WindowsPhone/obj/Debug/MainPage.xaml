@@ -13,13 +13,15 @@
 
         <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
             <StackPanel x:Name="HeaderStackPanel"  >
-                <Button x:ConnectionId='3' x:Name="debug" Content="Button" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                    />
+                <Button x:ConnectionId='3' x:Name="DebuggSaves" Content="Display Saves
+                        " HorizontalAlignment="Right" VerticalAlignment="Top" Width="169"                          />
+                <Button x:ConnectionId='4' x:Name="debug" Content="Nullize" HorizontalAlignment="Left" VerticalAlignment="Stretch"                     Width="206"/>
                 <TextBlock  TextAlignment="Center" 
 						Style="{StaticResource TitleTextBlockStyle}"                Foreground="White" 
 						FontSize="50" Height="Auto"> 
 						<Run Text="To DO"/>
                 </TextBlock>
-                <Button x:ConnectionId='4' x:Name="AddButton" FontSize="50" HorizontalAlignment="Stretch"                           BorderBrush="White" BorderThickness="2" Margin="2,0,0,0"
+                <Button x:ConnectionId='5' x:Name="AddButton" FontSize="50" HorizontalAlignment="Stretch"                           BorderBrush="White" BorderThickness="2" Margin="2,0,0,0"
                         Foreground="{StaticResource PhoneAccentBrush}"
                         Content="+"
                         />
@@ -57,8 +59,7 @@
     <Page.BottomAppBar>
         <CommandBar>
             <CommandBar.PrimaryCommands>
-                <AppBarButton x:ConnectionId='5' x:Name="HelpButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Help"                         />
-                <AppBarButton x:ConnectionId='6' x:Name="SettingsBarButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Setting"                                />
+                <AppBarButton x:ConnectionId='6' x:Name="HelpButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Help"                         />
                 <AppBarButton x:ConnectionId='7' x:Name="AboutButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="ContactPresence"                          />
             </CommandBar.PrimaryCommands>
         </CommandBar>

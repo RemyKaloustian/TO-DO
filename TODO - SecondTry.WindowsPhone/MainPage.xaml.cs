@@ -141,9 +141,12 @@ namespace TODO___SecondTry
             //Creates the textblock with the task
             TextBlock text = new TextBlock();
             text.Text = taskName;
-            text.FontSize = 20;
-            text.Margin = new Thickness(10.0, 0.0, 0.0, 0.0);
+            text.FontSize = 23;
+            text.Margin = new Thickness(10.0, 10.0, 10.0, 0.0);
             text.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
+            text.TextWrapping = TextWrapping.Wrap;
+
+
 
             //Creates the stackpanel containing the textbox
             StackPanel panel = new StackPanel();
@@ -283,9 +286,10 @@ namespace TODO___SecondTry
                 //Creates the textblock with the task
                 TextBlock text = new TextBlock();
                 text.Text = NewTaskTextBox.Text;
-                text.FontSize = 20;
-                text.Margin = new Thickness(10.0, 0.0, 0.0, 0.0);
+                text.FontSize = 23;
+                text.Margin = new Thickness(10.0, 10.0, 10.0, 0.0);
                 text.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
+                text.TextWrapping = TextWrapping.Wrap;
 
                 //Creates the stackpanel containing the textbox
                 StackPanel panel = new StackPanel();
@@ -343,6 +347,8 @@ namespace TODO___SecondTry
         {
             //WITH LOCALSETTINGS
 
+            System.Diagnostics.Debug.WriteLine("In SaveTasks : _currentItem = " + _currentItem);
+
             var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
             System.Diagnostics.Debug.WriteLine("In SaveTasks, Addin " + _taskList.ElementAt(_currentItem)+" to " + _currentItem);
             localSettings.Values["task" + _currentItem] = _taskList.ElementAt(_currentItem);
@@ -354,26 +360,33 @@ namespace TODO___SecondTry
 
 
             //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            for (int i = 0; i < _taskArray.Length; i++)
+            for (int i = 0; i <= _taskList.Count-1; i++)
             {
                 System.Diagnostics.Debug.WriteLine("SaveTask, showing _taskList values: " + localSettings.Values["task" + i]);
-                 
+
             }
         }//SaveTasks()
 
         //Loads the names of the tasks
         private string[] LoadTasks()
         {
+            System.Diagnostics.Debug.WriteLine("In Loadtasks, Beginning");
             var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
             string[] tempArray = new string[1];
 
             List<string> taskList = new List<string>();
 
-            for (int i = 0; localSettings.Values["task" + i] != null; ++i )
+            for (int i = 0; ; ++i)
             {
+                Object value = localSettings.Values["task" + i];
+                if (value == null || value.Equals(""))
+                {
+                    System.Diagnostics.Debug.WriteLine("On a breaké");
+                    break;
+                }
                 taskList.Add((string)localSettings.Values["task" + i]);
-                System.Diagnostics.Debug.WriteLine("In LoadTasks, task" + i +" = "+taskList.ElementAt(i) );
-                
+                System.Diagnostics.Debug.WriteLine("In LoadTasks, task" + i + " = " + taskList.ElementAt(i));
+
             }
 
             //for (int i = 0; i < tempArray.Length; i++)
@@ -411,23 +424,84 @@ namespace TODO___SecondTry
         //Deletes the selected task
         private void DeleteTask(object sender, RoutedEventArgs e)
         {
+            for (int i = 0; i < _taskList.Count; i++)
+            {
+                System.Diagnostics.Debug.WriteLine("In DeleteTask, _taskList(" + i + ") = " + _taskList.ElementAt(i));
+            }
+
             var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-            for (int i = 0; i < _taskList.Count; i++)
+
+            for (int i = 0; ; ++i) //Deleting all the saves
             {
-                if(((StackPanel)sender).Children.OfType<TextBlock>().FirstOrDefault().Text.Equals((string)localSettings.Values["task"+i]))
+                Object value = localSettings.Values["task" + i];
+                System.Diagnostics.Debug.WriteLine("In DeleteTask, before removing : " + value);
+                if (value == null || value.Equals(""))
                 {
-                    System.Diagnostics.Debug.WriteLine("In DeleteTask, Gonna remove : "  +_taskList.ElementAt(i) );
-                    _taskList.RemoveAt(i);
-
+                    System.Diagnostics.Debug.WriteLine("Dans DeleteTask, On a breaké 1");
+                    break;
                 }
+
+                localSettings.Values.Remove("task" + i);
+                System.Diagnostics.Debug.WriteLine("In DeleteTask, after removing : " + value);
+
+             }
+
+
+            _taskList.Remove(((StackPanel)sender).Children.OfType<TextBlock>().FirstOrDefault().Text);
+            System.Diagnostics.Debug.WriteLine("In deletTask, value removed in _taskList");
+
+
+            for (int i = 0; i <= _taskList.Count - 1; i++)
+            {
+                localSettings.Values["task" + i] = _taskList.ElementAt(i);
+                System.Diagnostics.Debug.WriteLine("In DeleteTask, " + _taskList.ElementAt(i) + "added");
             }
 
-           
-            for (int i = 0; i < _taskList.Count; i++)
-            {
-                System.Diagnostics.Debug.WriteLine("In DeleteTask, addin " + _taskList.ElementAt(i));
-                localSettings.Values["task" + i] = _taskList.ElementAt(i);
-            }
+
+
+
+//***************************************************************************************************************
+//======================================OLD VERSION ===========================================================
+//***************************************************************************************************************
+
+            //for (int i = 0; i < _taskList.Count; i++)
+            //{
+            //    if(((StackPanel)sender).Children.OfType<TextBlock>().FirstOrDefault().Text.Equals((string)localSettings.Values["task"+i]))
+            //    {
+            //        System.Diagnostics.Debug.WriteLine("In DeleteTask, Gonna remove : "  +_taskList.ElementAt(i) );
+            //        _taskList.RemoveAt(i);
+            //        System.Diagnostics.Debug.WriteLine("In deleteTask, avant nullisation taskremoved vaut : " + localSettings.Values["task" + i]);
+            //        //localSettings.Values["task " + i] = 0;
+            //        localSettings.Values.Remove("task" + i);
+            //        System.Diagnostics.Debug.WriteLine("In deleteTask, après nullisation taskremoved vaut : " + localSettings.Values["task" + i]);
+            //        --_currentItem;
+
+            //    }
+            //}
+
+            //System.Diagnostics.Debug.WriteLine("In DeleteTask,_tasklist.count =  " + _taskList.Count);
+
+            //System.Diagnostics.Debug.WriteLine("In DeletTAsks, on supprime toutes les valeurs sauvegardées");
+            //for (int i = 0; i <= _taskList.Count - 1; i++)
+            //{
+            //    System.Diagnostics.Debug.WriteLine("In DeleteTask, deletin " + _taskList.ElementAt(i));
+            //    localSettings.Values.Remove("task" + i);
+            //}
+
+
+            //System.Diagnostics.Debug.WriteLine("In DeletTAsks, on sauvegardes les valeurs de taskList");
+            //for (int i = 0; i <= _taskList.Count-1; i++)
+            //{
+            //    System.Diagnostics.Debug.WriteLine("In DeleteTask, addin to saves " + _taskList.ElementAt(i));
+            //    localSettings.Values["task" + i] = _taskList.ElementAt(i);
+            //}
+
+
+            //for (int i = 0; i <= _taskList.Count-1; i++)
+            //{
+            //    System.Diagnostics.Debug.WriteLine("In DeleteTask,saved values to " + i + "  = " + localSettings.Values["task" + i]);
+               
+            //}
 
             ((StackPanel)sender).Visibility = Windows.UI.Xaml.Visibility.Collapsed;
 
@@ -466,7 +540,7 @@ namespace TODO___SecondTry
                 }
 
                 
-                    _currentTask.Text = ChangeNameTextBox.Text;
+                _currentTask.Text = ChangeNameTextBox.Text;
                 ChangeNameTextBox.Text = "";
                 ChangeNameTextBox.Visibility = Visibility.Collapsed;
             }
@@ -515,6 +589,23 @@ namespace TODO___SecondTry
             for (int i = 0; localSettings.Values["task" + i] != null; ++i)
                 localSettings.Values["task" + i] = null;
             localSettings.Values["nbitem"] = 0;
+        }
+
+        private void DebuggSaves_Click(object sender, RoutedEventArgs e)
+        {
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            for (int i = 0; ; ++i)
+            {
+                Object value = localSettings.Values["task" + i];
+                if (value == null || value.Equals(""))
+                {
+                    System.Diagnostics.Debug.WriteLine("Dans DEBBUG SAVES, On a breaké");
+                    break;
+                }
+                
+                System.Diagnostics.Debug.WriteLine("In DEBUGG SAVES, task" + i + " = " + value);
+
+            }
         }
     }//class MainPage
 }//ns
