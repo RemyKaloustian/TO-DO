@@ -119,11 +119,6 @@ namespace TODO___SecondTry
             Frame.Navigate(typeof(MainPage));
         }
 
-        private void SettingsBarButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Settings));
-        }
-
         private void AboutBarButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(About));

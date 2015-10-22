@@ -73,12 +73,6 @@
     <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Debug\Opening.xbf">
-      <PackagePath>Opening.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Debug\Settings.xbf">
-      <PackagePath>Settings.xbf</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Debug\TODO - SecondTry.WindowsPhone.xr.xml">
       <PackagePath>TODO - SecondTry.WindowsPhone.xr.xml</PackagePath>
     </AppxPackagedFile>

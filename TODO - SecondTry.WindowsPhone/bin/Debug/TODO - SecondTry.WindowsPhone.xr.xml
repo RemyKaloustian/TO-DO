@@ -21,7 +21,6 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Children" />
       <RootProperty Name="Background" />
-      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="TextAlignment" />
@@ -32,8 +31,6 @@
       <RootProperty Name="Inlines" />
       <RootProperty Name="Style" />
       <RootProperty Name="Height" />
-      <RootProperty Name="Text" />
-      <RootProperty Name="CharacterSpacing" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="HorizontalAlignment" />
@@ -41,8 +38,6 @@
       <RootProperty Name="FontSize" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="Content" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Width" />
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="Margin" />
       <RootEvent Name="Click" />
@@ -71,21 +66,5 @@
       <RootEvent Name="LostFocus" />
     </RootType>
     <RootType FullName="TODO___SecondTry.MainPage" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Grid">
-      <RootProperty Name="ChildrenTransitions" />
-      <RootProperty Name="RowDefinitions" />
-      <RootProperty Name="Children" />
-      <RootProperty Name="Margin" />
-      <RootEvent Name="DataContextChanged" />
-      <RootMethod Name="GetRow" />
-      <RootMethod Name="SetRow" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
-    <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition" />
-    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
-      <RootProperty Name="Height" />
-    </RootType>
-    <RootType FullName="TODO___SecondTry.Opening" />
-    <RootType FullName="TODO___SecondTry.Settings" />
   </Roots.RootTypes>
 </Roots>

@@ -11,7 +11,9 @@
     <ScrollViewer Name="Scroller">
 
         <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
+            
             <StackPanel Background="{StaticResource PhoneAccentBrush}" >
+                
                 <TextBlock x:Name="TitleTextBlock"  TextAlignment="Center" 
 						Style="{StaticResource TitleTextBlockStyle}"                Foreground="White" 
 						FontSize="50" Height="Auto"> 
@@ -19,7 +21,6 @@
                 </TextBlock>
                 
             </StackPanel>
-
 
             <StackPanel x:Name="TaskPanel" Orientation="Vertical"
                             VerticalAlignment="Stretch">
@@ -41,10 +42,7 @@
 
             </StackPanel>
 
-
         </StackPanel>
-
-
 
     </ScrollViewer>
 

@@ -125,10 +125,5 @@ namespace TODO___SecondTry
         {
             Frame.Navigate(typeof(MainPage));
         }
-
-        private void SettingsBarButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Settings));
-        }
     }
 }

@@ -124,7 +124,7 @@ namespace TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[21];
+            _typeNameTable = new string[16];
             _typeNameTable[0] = "TODO___SecondTry.About";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -137,17 +137,12 @@ namespace TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo
             _typeNameTable[9] = "TODO___SecondTry.MainPage";
             _typeNameTable[10] = "Double";
             _typeNameTable[11] = "Windows.UI.Xaml.Controls.TextBlock";
-            _typeNameTable[12] = "String[]";
-            _typeNameTable[13] = "System.Array";
-            _typeNameTable[14] = "Int32";
-            _typeNameTable[15] = "System.Collections.Generic.List`1<Windows.UI.Xaml.Controls.StackPanel>";
-            _typeNameTable[16] = "Windows.UI.Xaml.Controls.StackPanel";
-            _typeNameTable[17] = "System.Collections.Generic.List`1<Windows.UI.Xaml.Controls.TextBlock>";
-            _typeNameTable[18] = "System.Collections.Generic.List`1<String>";
-            _typeNameTable[19] = "TODO___SecondTry.Opening";
-            _typeNameTable[20] = "TODO___SecondTry.Settings";
+            _typeNameTable[12] = "Int32";
+            _typeNameTable[13] = "System.Collections.Generic.List`1<Windows.UI.Xaml.Controls.StackPanel>";
+            _typeNameTable[14] = "Windows.UI.Xaml.Controls.StackPanel";
+            _typeNameTable[15] = "System.Collections.Generic.List`1<String>";
 
-            _typeTable = new global::System.Type[21];
+            _typeTable = new global::System.Type[16];
             _typeTable[0] = typeof(global::TODO___SecondTry.About);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -160,15 +155,10 @@ namespace TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo
             _typeTable[9] = typeof(global::TODO___SecondTry.MainPage);
             _typeTable[10] = typeof(global::System.Double);
             _typeTable[11] = typeof(global::Windows.UI.Xaml.Controls.TextBlock);
-            _typeTable[12] = typeof(global::System.String[]);
-            _typeTable[13] = typeof(global::System.Array);
-            _typeTable[14] = typeof(global::System.Int32);
-            _typeTable[15] = typeof(global::System.Collections.Generic.List<global::Windows.UI.Xaml.Controls.StackPanel>);
-            _typeTable[16] = typeof(global::Windows.UI.Xaml.Controls.StackPanel);
-            _typeTable[17] = typeof(global::System.Collections.Generic.List<global::Windows.UI.Xaml.Controls.TextBlock>);
-            _typeTable[18] = typeof(global::System.Collections.Generic.List<global::System.String>);
-            _typeTable[19] = typeof(global::TODO___SecondTry.Opening);
-            _typeTable[20] = typeof(global::TODO___SecondTry.Settings);
+            _typeTable[12] = typeof(global::System.Int32);
+            _typeTable[13] = typeof(global::System.Collections.Generic.List<global::Windows.UI.Xaml.Controls.StackPanel>);
+            _typeTable[14] = typeof(global::Windows.UI.Xaml.Controls.StackPanel);
+            _typeTable[15] = typeof(global::System.Collections.Generic.List<global::System.String>);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -207,11 +197,8 @@ namespace TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo
         private object Activate_5_ObservableDictionary() { return new global::TODO___SecondTry.Common.ObservableDictionary(); }
         private object Activate_8_Help() { return new global::TODO___SecondTry.Help(); }
         private object Activate_9_MainPage() { return new global::TODO___SecondTry.MainPage(); }
-        private object Activate_15_List() { return new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Controls.StackPanel>(); }
-        private object Activate_17_List() { return new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Controls.TextBlock>(); }
-        private object Activate_18_List() { return new global::System.Collections.Generic.List<global::System.String>(); }
-        private object Activate_19_Opening() { return new global::TODO___SecondTry.Opening(); }
-        private object Activate_20_Settings() { return new global::TODO___SecondTry.Settings(); }
+        private object Activate_13_List() { return new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Controls.StackPanel>(); }
+        private object Activate_15_List() { return new global::System.Collections.Generic.List<global::System.String>(); }
         private void MapAdd_5_ObservableDictionary(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
@@ -219,19 +206,13 @@ namespace TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo
             var newItem = (global::System.Object)item;
             collection.Add(newKey, newItem);
         }
-        private void VectorAdd_15_List(object instance, object item)
+        private void VectorAdd_13_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.Controls.StackPanel>)instance;
             var newItem = (global::Windows.UI.Xaml.Controls.StackPanel)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_17_List(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.Controls.TextBlock>)instance;
-            var newItem = (global::Windows.UI.Xaml.Controls.TextBlock)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_18_List(object instance, object item)
+        private void VectorAdd_15_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::System.String>)instance;
             var newItem = (global::System.String)item;
@@ -306,10 +287,8 @@ namespace TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo
                 userType.Activator = Activate_9_MainPage;
                 userType.AddMemberName("_screenHeight");
                 userType.AddMemberName("_currentTask");
-                userType.AddMemberName("_taskArray");
                 userType.AddMemberName("_currentItem");
                 userType.AddMemberName("_tasks");
-                userType.AddMemberName("_taskNames");
                 userType.AddMemberName("_taskList");
                 userType.SetIsLocalType();
                 xamlType = userType;
@@ -323,61 +302,25 @@ namespace TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo
                 xamlType = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 12:   //  String[]
-                userType = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Array"));
+            case 12:   //  Int32
+                xamlType = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 13:   //  System.Collections.Generic.List`1<Windows.UI.Xaml.Controls.StackPanel>
+                userType = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.CollectionAdd = VectorAdd_13_List;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 13:   //  System.Array
-                userType = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                xamlType = userType;
-                break;
-
-            case 14:   //  Int32
+            case 14:   //  Windows.UI.Xaml.Controls.StackPanel
                 xamlType = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 15:   //  System.Collections.Generic.List`1<Windows.UI.Xaml.Controls.StackPanel>
+            case 15:   //  System.Collections.Generic.List`1<String>
                 userType = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.CollectionAdd = VectorAdd_15_List;
                 userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 16:   //  Windows.UI.Xaml.Controls.StackPanel
-                xamlType = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 17:   //  System.Collections.Generic.List`1<Windows.UI.Xaml.Controls.TextBlock>
-                userType = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_17_List;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 18:   //  System.Collections.Generic.List`1<String>
-                userType = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_18_List;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 19:   //  TODO___SecondTry.Opening
-                userType = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_19_Opening;
-                userType.AddMemberName("NavigationHelper");
-                userType.AddMemberName("DefaultViewModel");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 20:   //  TODO___SecondTry.Settings
-                userType = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_20_Settings;
-                userType.AddMemberName("NavigationHelper");
-                userType.AddMemberName("DefaultViewModel");
-                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
             }
@@ -425,75 +368,35 @@ namespace TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo
             var that = (global::TODO___SecondTry.MainPage)instance;
             that._currentTask = (global::Windows.UI.Xaml.Controls.TextBlock)Value;
         }
-        private object get_6_MainPage__taskArray(object instance)
-        {
-            var that = (global::TODO___SecondTry.MainPage)instance;
-            return that._taskArray;
-        }
-        private void set_6_MainPage__taskArray(object instance, object Value)
-        {
-            var that = (global::TODO___SecondTry.MainPage)instance;
-            that._taskArray = (global::System.String[])Value;
-        }
-        private object get_7_MainPage__currentItem(object instance)
+        private object get_6_MainPage__currentItem(object instance)
         {
             var that = (global::TODO___SecondTry.MainPage)instance;
             return that._currentItem;
         }
-        private void set_7_MainPage__currentItem(object instance, object Value)
+        private void set_6_MainPage__currentItem(object instance, object Value)
         {
             var that = (global::TODO___SecondTry.MainPage)instance;
             that._currentItem = (global::System.Int32)Value;
         }
-        private object get_8_MainPage__tasks(object instance)
+        private object get_7_MainPage__tasks(object instance)
         {
             var that = (global::TODO___SecondTry.MainPage)instance;
             return that._tasks;
         }
-        private void set_8_MainPage__tasks(object instance, object Value)
+        private void set_7_MainPage__tasks(object instance, object Value)
         {
             var that = (global::TODO___SecondTry.MainPage)instance;
             that._tasks = (global::System.Collections.Generic.List<global::Windows.UI.Xaml.Controls.StackPanel>)Value;
         }
-        private object get_9_MainPage__taskNames(object instance)
-        {
-            var that = (global::TODO___SecondTry.MainPage)instance;
-            return that._taskNames;
-        }
-        private void set_9_MainPage__taskNames(object instance, object Value)
-        {
-            var that = (global::TODO___SecondTry.MainPage)instance;
-            that._taskNames = (global::System.Collections.Generic.List<global::Windows.UI.Xaml.Controls.TextBlock>)Value;
-        }
-        private object get_10_MainPage__taskList(object instance)
+        private object get_8_MainPage__taskList(object instance)
         {
             var that = (global::TODO___SecondTry.MainPage)instance;
             return that._taskList;
         }
-        private void set_10_MainPage__taskList(object instance, object Value)
+        private void set_8_MainPage__taskList(object instance, object Value)
         {
             var that = (global::TODO___SecondTry.MainPage)instance;
             that._taskList = (global::System.Collections.Generic.List<global::System.String>)Value;
-        }
-        private object get_11_Opening_NavigationHelper(object instance)
-        {
-            var that = (global::TODO___SecondTry.Opening)instance;
-            return that.NavigationHelper;
-        }
-        private object get_12_Opening_DefaultViewModel(object instance)
-        {
-            var that = (global::TODO___SecondTry.Opening)instance;
-            return that.DefaultViewModel;
-        }
-        private object get_13_Settings_NavigationHelper(object instance)
-        {
-            var that = (global::TODO___SecondTry.Settings)instance;
-            return that.NavigationHelper;
-        }
-        private object get_14_Settings_DefaultViewModel(object instance)
-        {
-            var that = (global::TODO___SecondTry.Settings)instance;
-            return that.DefaultViewModel;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -539,59 +442,23 @@ namespace TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo
                 xamlMember.Getter = get_5_MainPage__currentTask;
                 xamlMember.Setter = set_5_MainPage__currentTask;
                 break;
-            case "TODO___SecondTry.MainPage._taskArray":
-                userType = (global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TODO___SecondTry.MainPage");
-                xamlMember = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlMember(this, "_taskArray", "String[]");
-                xamlMember.Getter = get_6_MainPage__taskArray;
-                xamlMember.Setter = set_6_MainPage__taskArray;
-                break;
             case "TODO___SecondTry.MainPage._currentItem":
                 userType = (global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TODO___SecondTry.MainPage");
                 xamlMember = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlMember(this, "_currentItem", "Int32");
-                xamlMember.Getter = get_7_MainPage__currentItem;
-                xamlMember.Setter = set_7_MainPage__currentItem;
+                xamlMember.Getter = get_6_MainPage__currentItem;
+                xamlMember.Setter = set_6_MainPage__currentItem;
                 break;
             case "TODO___SecondTry.MainPage._tasks":
                 userType = (global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TODO___SecondTry.MainPage");
                 xamlMember = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlMember(this, "_tasks", "System.Collections.Generic.List`1<Windows.UI.Xaml.Controls.StackPanel>");
-                xamlMember.Getter = get_8_MainPage__tasks;
-                xamlMember.Setter = set_8_MainPage__tasks;
-                break;
-            case "TODO___SecondTry.MainPage._taskNames":
-                userType = (global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TODO___SecondTry.MainPage");
-                xamlMember = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlMember(this, "_taskNames", "System.Collections.Generic.List`1<Windows.UI.Xaml.Controls.TextBlock>");
-                xamlMember.Getter = get_9_MainPage__taskNames;
-                xamlMember.Setter = set_9_MainPage__taskNames;
+                xamlMember.Getter = get_7_MainPage__tasks;
+                xamlMember.Setter = set_7_MainPage__tasks;
                 break;
             case "TODO___SecondTry.MainPage._taskList":
                 userType = (global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TODO___SecondTry.MainPage");
                 xamlMember = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlMember(this, "_taskList", "System.Collections.Generic.List`1<String>");
-                xamlMember.Getter = get_10_MainPage__taskList;
-                xamlMember.Setter = set_10_MainPage__taskList;
-                break;
-            case "TODO___SecondTry.Opening.NavigationHelper":
-                userType = (global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TODO___SecondTry.Opening");
-                xamlMember = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlMember(this, "NavigationHelper", "TODO___SecondTry.Common.NavigationHelper");
-                xamlMember.Getter = get_11_Opening_NavigationHelper;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TODO___SecondTry.Opening.DefaultViewModel":
-                userType = (global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TODO___SecondTry.Opening");
-                xamlMember = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "TODO___SecondTry.Common.ObservableDictionary");
-                xamlMember.Getter = get_12_Opening_DefaultViewModel;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TODO___SecondTry.Settings.NavigationHelper":
-                userType = (global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TODO___SecondTry.Settings");
-                xamlMember = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlMember(this, "NavigationHelper", "TODO___SecondTry.Common.NavigationHelper");
-                xamlMember.Getter = get_13_Settings_NavigationHelper;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "TODO___SecondTry.Settings.DefaultViewModel":
-                userType = (global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("TODO___SecondTry.Settings");
-                xamlMember = new global::TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "TODO___SecondTry.Common.ObservableDictionary");
-                xamlMember.Getter = get_14_Settings_DefaultViewModel;
-                xamlMember.SetIsReadOnly();
+                xamlMember.Getter = get_8_MainPage__taskList;
+                xamlMember.Setter = set_8_MainPage__taskList;
                 break;
             }
             return xamlMember;
@@ -918,6 +785,9 @@ namespace TODO___SecondTry.TODO___SecondTry_WindowsPhone_XamlTypeInfo
         }
     }
 }
+
+
+
 
 
 

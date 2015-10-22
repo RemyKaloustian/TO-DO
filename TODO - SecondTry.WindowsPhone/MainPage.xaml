@@ -12,21 +12,26 @@
     <ScrollViewer Name="Scroller">
 
         <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
+            
             <StackPanel x:Name="HeaderStackPanel"  >
-                <Button x:Name="DebuggSaves" Content="Display Saves
-                        " HorizontalAlignment="Right" VerticalAlignment="Top" Width="169" Click="DebuggSaves_Click"/>
-                <Button x:Name="debug" Content="Nullize" HorizontalAlignment="Left" VerticalAlignment="Stretch" Click="debug_Click" Width="206"/>
+                
+                <!-- IN CASE OF DEBUGG-->
+                
+                <!--<Button x:Name="DebuggSaves" Content="Display Saves
+                        " HorizontalAlignment="Right" VerticalAlignment="Top" Width="169" Click="DebuggSaves_Click"/> -->
+                <!--<Button x:Name="debug" Content="Nullize" HorizontalAlignment="Left" VerticalAlignment="Stretch" Click="debug_Click" Width="206"/>-->
+                
                 <TextBlock  TextAlignment="Center" 
 						Style="{StaticResource TitleTextBlockStyle}"                Foreground="White" 
 						FontSize="50" Height="Auto"> 
 						<Run Text="To DO"/>
                 </TextBlock>
+                
                 <Button x:Name="AddButton" FontSize="50" HorizontalAlignment="Stretch" Click="AddButton_Click_1" BorderBrush="White" BorderThickness="2" Margin="2,0,0,0"
                         Foreground="{StaticResource PhoneAccentBrush}"
                         Content="+"
                         />
             </StackPanel>
-
 
             <StackPanel x:Name="TaskPanel" Orientation="Vertical"
                             VerticalAlignment="Stretch">
@@ -34,27 +39,12 @@
                 <TextBox x:Name="NewTaskTextBox" Visibility="Collapsed" KeyDown="NewTaskTextBox_KeyDown" LostFocus="NewTaskTextBox_LostFocus"/>
 
                 <TextBox x:Name="ChangeNameTextBox" Visibility="Collapsed" KeyDown="NewTaskTextBox_KeyDown" LostFocus="NewTaskTextBox_LostFocus"/>
-
-                <!--<StackPanel Height="88"
-						Background="{StaticResource PhoneAccentBrush}"
-                            >
-                        <TextBlock FontSize="20" Margin="10,0,0,0"
-							Foreground="White">
-							<Run Text="Task to do motherfucker de la muerte"/>
-                        </TextBlock>
-
-
-                    </StackPanel>-->
-
-            </StackPanel>
-
+               
+            </StackPanel>     
 
         </StackPanel>
-
-
-
+        
     </ScrollViewer>
-
 
     <Page.BottomAppBar>
         <CommandBar>
