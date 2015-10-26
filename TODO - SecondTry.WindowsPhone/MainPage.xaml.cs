@@ -257,7 +257,7 @@ namespace TODO___SecondTry
             System.Diagnostics.Debug.WriteLine("In SaveTasks : _currentItem = " + _currentItem);
 
             var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-            System.Diagnostics.Debug.WriteLine("In SaveTasks, Addin " + _taskList.ElementAt(_currentItem) + " to " + _currentItem);
+            //System.Diagnostics.Debug.WriteLine("In SaveTasks, Addin " + _taskList.ElementAt(_currentItem) + " to " + _currentItem);
             localSettings.Values["task" + _currentItem] = _taskList.ElementAt(_currentItem);
            
             for (int i = 0; i <= _taskList.Count - 1; i++)
@@ -330,6 +330,8 @@ namespace TODO___SecondTry
           
             //Deleting the task from the UI
             ((StackPanel)sender).Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+
+            --_currentItem;
 
         }//DeleteTask()
 
