@@ -138,14 +138,14 @@ namespace TODO___SecondTry
             // TODO: Save application state and stop any background activity
             deferral.Complete();
 
-            App.Current.Exit();
+            Application.Current.Exit();
 
             
         }
 
         //private void Application_Deactivated(object sender,  e)
         //{
-        //    App.Current.Exit;
+        //    Application.Current.Exit();
         //}
     }
 }

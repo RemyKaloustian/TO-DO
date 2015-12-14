@@ -432,5 +432,10 @@ namespace TODO___SecondTry
             }
         }
 
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
+        }
+
     }//class MainPage
 }//ns

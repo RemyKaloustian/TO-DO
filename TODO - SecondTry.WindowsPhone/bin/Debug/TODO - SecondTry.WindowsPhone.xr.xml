@@ -38,6 +38,9 @@
       <RootProperty Name="FontSize" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="Content" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="Height" />
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="Margin" />
       <RootEvent Name="Click" />
