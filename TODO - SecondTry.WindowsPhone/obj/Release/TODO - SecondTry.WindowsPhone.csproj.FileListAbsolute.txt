@@ -1,0 +1,42 @@
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Release\App.xbf
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Release\About.xbf
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Release\Help.xbf
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Release\MainPage.xbf
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Release\TODO - SecondTry.WindowsPhone.xr.xml
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Release\TODO - SecondTry.WindowsPhone.exe
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Release\TODO - SecondTry.WindowsPhone.pdb
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Release\resources.pri
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Release\AppxManifest.xml
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\bin\Release\TODO - SecondTry.WindowsPhone.build.appxrecipe
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\App.g.i.cs
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\App.g.cs
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\About.g.i.cs
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\About.g.cs
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\Help.g.i.cs
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\Help.g.cs
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\MainPage.g.i.cs
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\MainPage.g.cs
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\XamlTypeInfo.g.cs
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\App.xaml
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\About.xaml
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\Help.xaml
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\MainPage.xaml
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\App.xbf
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\About.xbf
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\Help.xbf
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\MainPage.xbf
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\XamlSaveStateFile.xml
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\TODO - SecondTry.WindowsPhone.exe
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\TODO - SecondTry.WindowsPhone.pdb
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\priconfig.xml
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\priconfig.xml.intermediate
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\layout.resfiles
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\layout.resfiles.intermediate
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\resources.resfiles
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\resources.resfiles.intermediate
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\pri.resfiles
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\pri.resfiles.intermediate
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\qualifiers.txt
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\qualifiers.txt.intermediate
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\MultipleQualifiersPerDimensionFound.txt
+D:\Documents\Desktop\TRAVAIL\DÉVELOPPEMENT\APPLICATIONS C#\TODO - SecondTry\TODO - SecondTry.WindowsPhone\obj\Release\ProjectArchitectures.txt

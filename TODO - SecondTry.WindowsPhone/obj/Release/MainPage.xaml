@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="TODO___SecondTry.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TODO___SecondTry"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"  >
+
+
+    <ScrollViewer Name="Scroller">
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
+
+            <StackPanel x:Name="HeaderStackPanel"  >
+
+                <!-- IN CASE OF DEBUGG-->
+
+                <!--<Button x:Name="DebuggSaves" Content="Display Saves
+                        " HorizontalAlignment="Right" VerticalAlignment="Top" Width="169" Click="DebuggSaves_Click"/> -->
+                <!--<Button x:Name="debug" Content="Nullize" HorizontalAlignment="Left" VerticalAlignment="Stretch" Click="debug_Click" Width="206"/>-->
+
+                <TextBlock  TextAlignment="Center" 
+						Style="{StaticResource TitleTextBlockStyle}"                Foreground="White" 
+						FontSize="50" Height="Auto"> 
+						<Run Text="To DO"/>
+                </TextBlock>
+                <Button x:ConnectionId='3' x:Name="ExitButton" Content="X" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="24" BorderBrush="{x:Null}" Foreground="White" Background="#FF898282" Height="67"                         />
+
+                <Button x:ConnectionId='4' x:Name="AddButton" FontSize="50" HorizontalAlignment="Stretch"                           BorderBrush="White" BorderThickness="2" Margin="2,0,0,0"
+                        Foreground="{StaticResource PhoneAccentBrush}"
+                        Content="+"
+                        />
+            </StackPanel>
+
+            <StackPanel x:Name="TaskPanel" Orientation="Vertical"
+                            VerticalAlignment="Stretch">
+
+                <TextBox x:ConnectionId='1' x:Name="NewTaskTextBox" Visibility="Collapsed"                                                                      />
+
+                <TextBox x:ConnectionId='2' x:Name="ChangeNameTextBox" Visibility="Collapsed"                                                                      />
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </ScrollViewer>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:ConnectionId='5' x:Name="HelpButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Help"                         />
+                <AppBarButton x:ConnectionId='6' x:Name="AboutButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="ContactPresence"                          />
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
+

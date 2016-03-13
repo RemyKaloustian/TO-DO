@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="TODO___SecondTry.Help"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TODO___SecondTry"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer Name="Scroller">
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
+            
+            <StackPanel Background="{StaticResource PhoneAccentBrush}" >
+                
+                <TextBlock x:Name="TitleTextBlock"  TextAlignment="Center" 
+						Style="{StaticResource TitleTextBlockStyle}"                Foreground="White" 
+						FontSize="50" Height="Auto"> 
+						<Run Text="Help"/>
+                </TextBlock>
+                
+            </StackPanel>
+
+            <StackPanel x:Name="TaskPanel" Orientation="Vertical"
+                            VerticalAlignment="Stretch">
+
+                <TextBlock Style="{StaticResource BaseTextBlockStyle}" Margin="10,10,10,0" Foreground="{StaticResource PhoneAccentBrush}"
+                           >
+                    Click on a task to change its name.
+                    
+                    <LineBreak></LineBreak>
+                    <LineBreak></LineBreak>
+                    Hold a task to delete it.
+                    
+                    <LineBreak></LineBreak>
+                    <LineBreak></LineBreak>
+                    
+                    For any problem, make sure to contact the developer (see About below).
+                    
+                </TextBlock>
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </ScrollViewer>
+
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:ConnectionId='1' x:Name="HomeBarButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Home"                            />
+                <AppBarButton x:ConnectionId='2' x:Name="AboutButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="ContactPresence"                             />
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
+

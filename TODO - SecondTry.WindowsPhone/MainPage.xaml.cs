@@ -122,10 +122,10 @@ namespace TODO___SecondTry
             //Creates the stackpanel containing the textbox
             StackPanel panel = new StackPanel();
             panel.Background = _phoneAccent;
-            panel.Height = _screenHeight / 6;
+            panel.Height = _screenHeight / 10;
 
             panel.Orientation = Orientation.Vertical;
-            panel.Margin = new Thickness(0.0, 10.0, 0.0, 0.0);
+            panel.Margin = new Thickness(0.0, 5.0, 0.0, 0.0);
 
             NewTaskTextBox.Text = "";
             NewTaskTextBox.Visibility = Visibility.Collapsed;
@@ -223,10 +223,10 @@ namespace TODO___SecondTry
                 //Creates the stackpanel containing the textbox
                 StackPanel panel = new StackPanel();
                 panel.Background = _phoneAccent;
-                panel.Height = _screenHeight / 6;
+                panel.Height = _screenHeight / 10;
 
                 panel.Orientation = Orientation.Vertical;
-                panel.Margin = new Thickness(0.0, 10.0, 0.0, 0.0);
+                panel.Margin = new Thickness(0.0, 5.0, 0.0, 0.0);
 
                 NewTaskTextBox.Text = "";
                 NewTaskTextBox.Visibility = Visibility.Collapsed;

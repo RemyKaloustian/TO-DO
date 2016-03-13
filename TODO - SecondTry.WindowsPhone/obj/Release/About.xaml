@@ -1,0 +1,67 @@
+﻿<Page
+    x:Class="TODO___SecondTry.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TODO___SecondTry"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer>
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
+
+            <StackPanel Background="{StaticResource PhoneAccentBrush}" >
+
+                <TextBlock x:Name="TitleTextBlock"  TextAlignment="Center" 
+						Style="{StaticResource TitleTextBlockStyle}"                Foreground="White" 
+						FontSize="50" Height="Auto"> 
+						<Run Text="About"/>
+                </TextBlock>
+
+            </StackPanel>
+
+            <StackPanel x:Name="TaskPanel" Orientation="Vertical"
+                        VerticalAlignment="Stretch"/>
+            
+            <TextBlock TextAlignment="Left" 
+                            Margin="10,20,10,0"
+                            TextWrapping="Wrap"
+                            FontSize="20"
+                            Foreground="{StaticResource PhoneAccentBrush}">
+                    TO DO is an application that allows you to pin tasks. Its main purpose is to allow you to note things if you can't write on a paper or just if you prefer pinning it on your phone.
+                    <LineBreak></LineBreak>
+                    <LineBreak></LineBreak>
+                    TO DO is very simple to use, just click +, and create a new note.
+                    <LineBreak></LineBreak>
+            </TextBlock>
+
+            <TextBlock TextAlignment="Center" 
+                            Margin="10,10,10,0"
+                            TextWrapping="Wrap"
+                            FontSize="20"
+                            Foreground="{StaticResource PhoneAccentBrush}">
+                    This app was developped by
+                    <LineBreak></LineBreak>
+                    Rémy Kaloustian. <LineBreak></LineBreak>
+            </TextBlock>
+
+            <Button x:ConnectionId='1' x:Name="RemyButton" HorizontalAlignment="Center" BorderBrush="{x:Null}" FontSize="22"
+                        Foreground="{StaticResource PhoneAccentBrush}"                         >remy.kaloustian.alwaysdata.net</Button>
+
+        </StackPanel>
+        
+    </ScrollViewer>
+
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:ConnectionId='2' x:Name="AboutBarButton" Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="Home"                             />
+                <AppBarButton Label="{Binding AppBarLabel}" Command="{Binding SomeCommand}" Icon="ContactPresence"                         />         
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
+
