@@ -122,7 +122,7 @@ namespace TODO___SecondTry
             //Creates the stackpanel containing the textbox
             StackPanel panel = new StackPanel();
             panel.Background = _phoneAccent;
-            panel.Height = _screenHeight / 10;
+            panel.MinHeight = _screenHeight / 10;
 
             panel.Orientation = Orientation.Vertical;
             panel.Margin = new Thickness(0.0, 5.0, 0.0, 0.0);
@@ -223,7 +223,7 @@ namespace TODO___SecondTry
                 //Creates the stackpanel containing the textbox
                 StackPanel panel = new StackPanel();
                 panel.Background = _phoneAccent;
-                panel.Height = _screenHeight / 10;
+                panel.MinHeight = _screenHeight / 10;
 
                 panel.Orientation = Orientation.Vertical;
                 panel.Margin = new Thickness(0.0, 5.0, 0.0, 0.0);
@@ -341,6 +341,7 @@ namespace TODO___SecondTry
             _currentTask = ((StackPanel)sender).Children.OfType<TextBlock>().FirstOrDefault();
 
             ChangeNameTextBox.Visibility = Visibility.Visible;
+            ChangeNameTextBox.Text = _currentTask.Text;
             ChangeNameTextBox.Focus(FocusState.Keyboard);
             ChangeNameTextBox.LostFocus += DestroyChangeNameTextBox;
             ChangeNameTextBox.KeyDown += ChangeNameTextBox_KeyDown;
